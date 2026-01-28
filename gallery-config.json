@@ -1,0 +1,178 @@
+{
+  "slide-7": [
+    {
+      "src": "files/RaspApp.png",
+      "title": "Configuración del Servidor",
+      "description": "Instalar Imagen Ubuntu Server en Raspberry Pi"
+    },
+    {
+      "src": "files/rasp01.png",
+      "title": "Configuración del Servidors",
+      "description": "Actualización del sistema operativo Ubuntu Server"
+    },
+    {
+      "src": "files/rasp02.png",
+      "title": "Configuración del Servidor",
+      "description": "Instalar PostgreSQL en Raspberry Pi"
+    },
+    {
+      "src": "files/rasp03.png",
+      "title": "Configuración del Servidor",
+      "description": "Crear base de datos y usuario en PostgreSQL"
+    },
+    {
+      "src": "files/rasp04.png",
+      "title": "Configuración del Servidor",
+      "description": "Instalar .NET 8 en Raspberry Pi"
+    },
+    {
+      "src": "files/rasp05.png",
+      "title": "Configuración del Servidor",
+      "description": "Importar Proyecto Backend en Raspberry Pi"
+    },
+    {
+      "src": "files/rasp06.png",
+      "title": "Configuración del Servidor",
+      "description": "Instalar NGINX en Raspberry Pi"
+    },
+    {
+      "src": "files/rasp07.png",
+      "title": "Configuración del Servidor",
+      "description": "Importar Proyecto Frontend en Raspberry Pi"
+    },
+    {
+      "src": "files/rasp08.png",
+      "title": "Configuración del Servidor",
+      "description": "Habilitar NGINX como proxy inverso"
+    },
+    {
+      "src": "files/rasp09.png",
+      "title": "Configuración del Servidor",
+      "description": "Instalar Certificado SSL con certbot"
+    },
+    {
+      "src": "files/rasp10.png",
+      "title": "Configuración del Servidor",
+      "description": "Instalar Cloudflare en Raspberry Pi"
+    },
+    {
+      "src": "files/rasp12.png",
+      "title": "Configuración del Servidor",
+      "description": "Configurar Tunnel de Cloudflare"
+    },
+    {
+      "src": "files/rasp13.png",
+      "title": "Configuración del Servidor",
+      "description": "Configurar Tunnel de Cloudflare"
+    }
+  ],
+  "slide-9": [
+    {
+      "src": "files/backend.png",
+      "title": "Backend API",
+      "description": "Estructura del backend .NET 8 Swagger"
+    },
+    {
+      "src": "files/back01.png",
+      "title": "Backend API",
+      "description": "Autenticación JWT"
+    },
+    {
+      "src": "files/back02.png",
+      "title": "Backend API",
+      "description": "Autorización por Beearer Token"
+    },
+    {
+      "src": "files/back03.png",
+      "title": "Backend API",
+      "description": "Autenticación Exitosa"
+    },
+    {
+      "src": "files/back04.png",
+      "title": "Backend API",
+      "description": "Consumo de Endpoint Protegido"
+    }
+  ],
+  "slide-10": [
+    {
+      "src": "files/frontend.png",
+      "title": "Frontend Angular",
+      "description": "Interfaz de usuario Angular 18"
+    },
+    {
+      "src": "files/front01.png",
+      "title": "Frontend Angular",
+      "description": "Dashboard"
+    },
+    {
+      "src": "files/front02.png",
+      "title": "Frontend Angular",
+      "description": "Datos Propietario"
+    },
+    {
+      "src": "files/front03.png",
+      "title": "Frontend Angular",
+      "description": "Buscador de Mascotas"
+    },
+    {
+      "src": "files/front04.png",
+      "title": "Frontend Angular",
+      "description": "TI Mascota"
+    },
+    {
+      "src": "files/front05.png",
+      "title": "Frontend Angular",
+      "description": "Datos de Contacto"
+    }
+  ],
+  "slide-11": [
+    {
+    "src": "files/Esquematico.png",
+    "title": "Hardware RFID",
+    "description": "Diagrama esquemático de conexión STM32 con RC522"
+    },
+    {
+      "src": "files/rfid.png",
+      "title": "Hardware RFID",
+      "description": "PCB STM32 con RC522"
+    },
+    {
+      "src": "files/Base.bmp",
+      "title": "Hardware RFID",
+      "description": "Base PCB STM32 con RC522"
+    },
+    {
+      "src": "files/Tapa.bmp",
+      "title": "Hardware RFID",
+      "description": "Tapa PCB STM32 con RC522"
+    },
+    {
+      "src": "files/rfid.jpeg",
+      "title": "Hardware RFID",
+      "description": "Lector RFID Completo"
+    },
+    {
+      "src": "files/rfidopen.jpeg",
+      "title": "Hardware RFID",
+      "description": "Lector RFID Interno"     
+    }
+  ],
+  "slide-12": [
+    {
+      "src": "files/qr01.png",
+      "title": "Códigos QR",
+      "description": "Interfaz de generación de códigos QR"
+    },
+    {
+      "src": "files/qr02.png",
+      "title": "Códigos QR",
+      "description": "Generación de códigos QR"
+    },
+    {
+      "src": "files/qr.png",
+      "title": "Códigos QR",
+      "description": "Código QR"
+    }
+    
+  ]
+}
