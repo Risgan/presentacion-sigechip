@@ -263,6 +263,27 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
             overflow: hidden;
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+        }
+
+        /* Fullscreen Mode Styles */
+        .fullscreen-mode .toolbar {
+            display: none;
+        }
+
+        .fullscreen-mode .progress-bar {
+            display: none;
+        }
+
+        .fullscreen-mode .slide-area {
+            padding: 0;
+            background: #000;
+        }
+
+        .fullscreen-mode .slide-wrapper {
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .slide {
@@ -4199,13 +4220,13 @@
         <div class="toolbar">
             <div class="toolbar-title">
                 <i class="fas fa-presentation"></i>
-                <span>Sustentación SIGECHIP</span>
+                <span>Presentación SIGECHIP</span>
             </div>
 
             <div class="controls">
-                <button class="btn btn-orange" onclick="downloadCurrentSlide()">
+                <!-- <button class="btn btn-orange" onclick="downloadCurrentSlide()">
                     <i class="fas fa-file-pdf"></i> Descargar PDF
-                </button>
+                </button> -->
 
                 <button class="btn" id="firstBtn" onclick="goToSlide(1)">
                     <i class="fas fa-step-backward"></i> Inicio
@@ -5290,7 +5311,7 @@
                             <div class="right-col">
                                 <div class="image-container">
                                     <img alt="Interfaz de Generación QR y Escaneo Móvil" 
-                                        src="files/qr.png" 
+                                        src="files/qr02.png" 
                                         class="clickable-image"
                                         style="cursor: pointer;"
                                         onclick="openGallery('slide-12')" />
@@ -6245,17 +6266,66 @@
         function toggleFullscreen() {
             const elem = document.documentElement;
             const icon = document.getElementById('fullscreenIcon');
+            const viewerWrapper = document.querySelector('.viewer-wrapper');
 
             if (!document.fullscreenElement) {
                 elem.requestFullscreen().then(() => {
                     icon.className = 'fas fa-compress';
+                    viewerWrapper.classList.add('fullscreen-mode');
+                    scaleSlideToFit();
                 });
             } else {
                 document.exitFullscreen().then(() => {
                     icon.className = 'fas fa-expand';
+                    viewerWrapper.classList.remove('fullscreen-mode');
+                    resetSlideScale();
                 });
             }
         }
+
+        // Función para escalar el slide al tamaño de pantalla completa
+        function scaleSlideToFit() {
+            const slideWrapper = document.querySelector('.slide-wrapper');
+            const slideWidth = 1280;
+            const slideHeight = 720;
+            
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            // Calcular escala manteniendo aspect ratio
+            const scaleX = windowWidth / slideWidth;
+            const scaleY = windowHeight / slideHeight;
+            const scale = Math.min(scaleX, scaleY);
+            
+            slideWrapper.style.transform = `scale(${scale})`;
+        }
+
+        // Función para resetear la escala
+        function resetSlideScale() {
+            const slideWrapper = document.querySelector('.slide-wrapper');
+            slideWrapper.style.transform = 'scale(1)';
+        }
+
+        // Detectar cuando se sale de pantalla completa con ESC
+        document.addEventListener('fullscreenchange', () => {
+            const viewerWrapper = document.querySelector('.viewer-wrapper');
+            const icon = document.getElementById('fullscreenIcon');
+            
+            if (!document.fullscreenElement) {
+                viewerWrapper.classList.remove('fullscreen-mode');
+                icon.className = 'fas fa-expand';
+                resetSlideScale();
+            } else {
+                scaleSlideToFit();
+            }
+        });
+
+        // Reescalar cuando cambia el tamaño de la ventana en fullscreen
+        window.addEventListener('resize', () => {
+            if (document.fullscreenElement) {
+                scaleSlideToFit();
+            }
+        });
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
