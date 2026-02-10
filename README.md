@@ -291,3 +291,11 @@ Hecho con ❤️ por [John Alvaro Rueda Forero](https://github.com/risgan)
 `Universidad ECCI • Facultad de Ingenierías • Ingeniería Electrónica • 2026`
 
 </div>
+
+
+# Comando ejecución local
+
+```python
+python -m http.server 8081
+
+```
