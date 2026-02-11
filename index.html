@@ -125,6 +125,52 @@
             transition: width 0.3s ease;
         }
 
+        /* Demo Video Modal Styles */
+        .demo-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 11000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .demo-content {
+            width: min(90%, 960px);
+            background: #0b0b0b;
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+            position: relative;
+        }
+
+        .demo-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            background: #000;
+        }
+
+        .demo-close {
+            position: absolute;
+            top: -14px;
+            right: -14px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: #D66D00;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+        }
+
         /* Gallery Modal Styles */
         .gallery-modal {
             display: none;
@@ -828,6 +874,14 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
+            }
+
+            .demo-trigger {
+                cursor: pointer;
+                border: none;
+                outline: none;
+                font: inherit;
+                background: transparent;
             }
 
             /* Timeline Container */
@@ -3605,9 +3659,8 @@
 
             .objectives-grid {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                /* Changed to 4 columns */
-                gap: 20px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
                 flex: 1;
             }
 
@@ -5846,10 +5899,10 @@
                         <!-- Content -->
                         <div class="content-wrapper">
                             <!-- Badge -->
-                            <div class="methodology-badge">
+                            <button class="methodology-badge demo-trigger" onclick="openDemoVideo()">
                                 <i class="fas fa-play-circle"></i>
                                 <span>Flujo de la Demostración</span>
-                            </div>
+                            </button>
                             <!-- Timeline -->
                             <div class="timeline-container">
                                 <!-- Background Line -->
@@ -5956,7 +6009,7 @@
                                             <i class="fas fa-server"></i>
                                         </div>
                                         <h4 class="card-title">Obj. 1: Viabilidad del Servidor</h4>
-                                        <p class="card-text">Se validó la capacidad técnica de Raspberry Pi 3 B+ como plataforma de servidor web, confirmando su aptitud para hospedar aplicaciones de gestión de datos con arquitectura RESTful. Para entornos industriales o comerciales sería necesario considerar hardware más robusto.</p>
+                                        <p class="card-text">Se validó la capacidad técnica de Raspberry Pi 3 B+ como plataforma de servidor web para prototipo académico, logrando estabilidad del 100% en 100 requests de prueba. Sin embargo, se identificaron limitaciones de RAM (1GB) y procesamiento para cargas concurrentes. Para entornos productivos o comerciales se requeriría migrar a hardware industrial (servidores ARM de mayor especificación o arquitecturas x86).</p>
                                     </div>
                                     <!-- Conc 2: Objetivo 2 - Integración Web -->
                                     <div class="obj-card">
@@ -5964,7 +6017,7 @@
                                             <i class="fas fa-code"></i>
                                         </div>
                                         <h4 class="card-title">Obj. 2: Plataforma Web Funcional</h4>
-                                        <p class="card-text">Se implementó exitosamente una arquitectura moderna (Express.js, React, PostgreSQL) con autenticación JWT y comunicación segura. El sistema desarrollado cumple con los requisitos funcionales para un prototipo de investigación académica.</p>
+                                        <p class="card-text">Se implementó exitosamente una arquitectura moderna (Angular 18, .NET 8 Core, PostgreSQL) con autenticación JWT y comunicación segura. El desarrollo presentó desafíos en la optimización de recursos del servidor y la sincronización frontend-backend, logrando finalmente tiempos de respuesta promedio de 1.87s y throughput de 4.26 req/s.</p>
                                     </div>
                                     <!-- Conc 3: Objetivo 3 - Hardware RFID/QR -->
                                     <div class="obj-card">
@@ -5972,15 +6025,7 @@
                                             <i class="fas fa-microchip"></i>
                                         </div>
                                         <h4 class="card-title">Obj. 3: Integración RFID y QR</h4>
-                                        <p class="card-text">La integración de hardware RFID (RC522 + STM32) y generación de códigos QR resultó efectiva, logrando identificación exitosa con tiempos de respuesta promedio de 1.87s. Se validó la interoperabilidad entre dispositivos físicos y aplicaciones web.</p>
-                                    </div>
-                                    <!-- Conc 4: Impacto y Proyección -->
-                                    <div class="obj-card">
-                                        <div class="card-icon">
-                                            <i class="fas fa-lightbulb"></i>
-                                        </div>
-                                        <h4 class="card-title">Impacto y Proyección</h4>
-                                        <p class="card-text">El proyecto establece una base experimental para futuras investigaciones en IoT aplicado a mascotas. Abre líneas de trabajo en visión artificial, apps móviles nativas y soluciones multi-hogar con mayor nivel de integración tecnológica.</p>
+                                        <p class="card-text">La integración de hardware RFID (RC522 + STM32) mediante emulación HID y generación dinámica de códigos QR resultó efectiva, alcanzando 100% de lecturas exitosas en pruebas. Se superaron desafíos de comunicación SPI y sincronización de datos, validando la interoperabilidad hardware-software en entornos de bajo costo.</p>
                                     </div>
                                 </div>
                             </div>
@@ -6271,6 +6316,27 @@
             goToSlide(input);
         }
 
+        function openDemoVideo() {
+            const modal = document.getElementById('demoModal');
+            const video = document.getElementById('demoVideo');
+
+            if (!modal || !video) return;
+
+            modal.style.display = 'flex';
+            video.currentTime = 0;
+            video.play();
+        }
+
+        function closeDemoVideo() {
+            const modal = document.getElementById('demoModal');
+            const video = document.getElementById('demoVideo');
+
+            if (!modal || !video) return;
+
+            video.pause();
+            modal.style.display = 'none';
+        }
+
         async function downloadCurrentSlide() {
             const button = event.target.closest('button');
             const originalText = button.innerHTML;
@@ -6397,6 +6463,8 @@
         document.addEventListener('keydown', (e) => {
             const modal = document.getElementById('galleryModal');
             const isModalOpen = modal && modal.style.display === 'flex';
+            const demoModal = document.getElementById('demoModal');
+            const isDemoOpen = demoModal && demoModal.style.display === 'flex';
             
             // Gallery navigation (when modal is open)
             if (isModalOpen) {
@@ -6414,9 +6482,18 @@
                     return;
                 }
             }
+
+            // Demo video modal (when open)
+            if (isDemoOpen) {
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    closeDemoVideo();
+                }
+                return;
+            }
             
             // Slide navigation (when modal is closed)
-            if (!isModalOpen) {
+            if (!isModalOpen && !isDemoOpen) {
                 if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
                     e.preventDefault();
                     nextSlide();
@@ -6503,6 +6580,19 @@
             showGalleryImage(currentImageIndex);
         }
     </script>
+
+    <!-- Demo Video Modal -->
+    <div id="demoModal" class="demo-modal">
+        <div class="demo-content">
+            <button class="demo-close" onclick="closeDemoVideo()">
+                <i class="fas fa-times"></i>
+            </button>
+            <video id="demoVideo" class="demo-video" controls preload="metadata">
+                <source src="files/demo.mp4" type="video/mp4" />
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+    </div>
 
     <!-- Gallery Modal -->
     <div id="galleryModal" class="gallery-modal">
