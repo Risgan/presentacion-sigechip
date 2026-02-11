@@ -495,7 +495,8 @@
                 /* Slightly wider for text */
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                /* justify-content: center; */
+                justify-content: flex-start;
             }
 
             .right-col {
@@ -509,9 +510,9 @@
             .bullet-point {
                 display: flex;
                 align-items: flex-start;
-                margin-bottom: 28px;
+                margin-bottom: 15px;
                 background-color: #f8f9fa;
-                padding: 20px;
+                padding: 15px;
                 border-radius: 12px;
                 border-left: 5px solid #003B70;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
@@ -986,6 +987,84 @@
             }
 
             .step-item:hover .step-icon {
+                color: #003B70;
+            }
+
+            /* Colores personalizados por paso (basados en imagen iterativo.png) */
+            .step-circle.color-1 {
+                /* border-color: #5594fb; */
+            }
+
+            .step-circle.color-1 .step-number {
+                background-color: #488cfa;
+            }
+
+            .step-circle.color-1 .step-icon {
+                /* color: #9B59B6; */
+            }
+
+            .step-circle.color-2,
+            .step-circle.color-3 {
+                /* border-color: #27AE60; */
+            }
+
+            .step-circle.color-2 .step-number,
+            .step-circle.color-3 .step-number {
+                background-color: #45c989;
+            }
+
+            .step-circle.color-2 .step-icon,
+            .step-circle.color-3 .step-icon {
+                /* color: #27AE60; */
+            }
+
+            .step-circle.color-4,
+            .step-circle.color-5,
+            .step-circle.color-6 {
+                /* border-color: #9FD859; */
+            }
+
+            .step-circle.color-4 .step-number,
+            .step-circle.color-5 .step-number,
+            .step-circle.color-6 .step-number {
+                background-color: #b2dd5d;
+            }
+
+            .step-circle.color-4 .step-icon,
+            .step-circle.color-5 .step-icon,
+            .step-circle.color-6 .step-icon {
+                /* color: #9FD859; */
+            }
+
+            .step-circle.color-7 {
+                /* border-color: #5DADE2; */
+            }
+
+            .step-circle.color-7 .step-number {
+                background-color: #21bdf2;
+            }
+
+            .step-circle.color-7 .step-icon {
+                /* color: #5DADE2; */
+            }
+
+            .step-item:hover .step-circle.color-1,
+            .step-item:hover .step-circle.color-2,
+            .step-item:hover .step-circle.color-3,
+            .step-item:hover .step-circle.color-4,
+            .step-item:hover .step-circle.color-5,
+            .step-item:hover .step-circle.color-6,
+            .step-item:hover .step-circle.color-7 {
+                border-color: #003B70;
+            }
+
+            .step-item:hover .step-circle.color-1 .step-icon,
+            .step-item:hover .step-circle.color-2 .step-icon,
+            .step-item:hover .step-circle.color-3 .step-icon,
+            .step-item:hover .step-circle.color-4 .step-icon,
+            .step-item:hover .step-circle.color-5 .step-icon,
+            .step-item:hover .step-circle.color-6 .step-icon,
+            .step-item:hover .step-circle.color-7 .step-icon {
                 color: #003B70;
             }
 
@@ -4633,7 +4712,7 @@
                                 <div class="timeline-line-progress"></div>
                                 <!-- Step 1 -->
                                 <div class="step-item">
-                                    <div class="step-circle">
+                                    <div class="step-circle color-1">
                                         <div class="step-number">1</div>
                                         <i class="fas fa-sitemap step-icon"></i>
                                     </div>
@@ -4642,7 +4721,7 @@
                                 </div>
                                 <!-- Step 2 -->
                                 <div class="step-item">
-                                    <div class="step-circle">
+                                    <div class="step-circle color-2">
                                         <div class="step-number">2</div>
                                         <i class="fas fa-server step-icon"></i>
                                     </div>
@@ -4651,7 +4730,7 @@
                                 </div>
                                 <!-- Step 3 -->
                                 <div class="step-item">
-                                    <div class="step-circle">
+                                    <div class="step-circle color-3">
                                         <div class="step-number">3</div>
                                         <i class="fas fa-database step-icon"></i>
                                     </div>
@@ -4660,7 +4739,7 @@
                                 </div>
                                 <!-- Step 4 -->
                                 <div class="step-item">
-                                    <div class="step-circle">
+                                    <div class="step-circle color-4">
                                         <div class="step-number">4</div>
                                         <i class="fas fa-cogs step-icon"></i>
                                     </div>
@@ -4669,7 +4748,7 @@
                                 </div>
                                 <!-- Step 5 -->
                                 <div class="step-item">
-                                    <div class="step-circle">
+                                    <div class="step-circle color-5">
                                         <div class="step-number">5</div>
                                         <i class="fas fa-desktop step-icon"></i>
                                     </div>
@@ -4678,7 +4757,7 @@
                                 </div>
                                 <!-- Step 6 -->
                                 <div class="step-item">
-                                    <div class="step-circle">
+                                    <div class="step-circle color-6">
                                         <div class="step-number">6</div>
                                         <i class="fas fa-microchip step-icon"></i>
                                     </div>
@@ -4687,7 +4766,7 @@
                                 </div>
                                 <!-- Step 7 -->
                                 <div class="step-item">
-                                    <div class="step-circle">
+                                    <div class="step-circle color-7">
                                         <div class="step-number">7</div>
                                         <i class="fas fa-check-circle step-icon"></i>
                                     </div>
@@ -5751,7 +5830,7 @@
                                                     <span class="pill pill-warning">$5.90</span></td>
                                                 <td style="text-align: center; background-color: #e6f0fa; font-weight: bold;">
                                                     <span class="pill pill-success">$2.70</span></td>
-                                                <td style="text-align: center; font-size: 9px;">Energía, Internet y RPi ($60 1er año)
+                                                <td style="text-align: center; font-size: 9px;">Energía, Internet y RPi
                                                 </td>
                                             </tr>
                                             <tr>
@@ -5993,7 +6072,7 @@
                                 </div>
                                 <div class="general-content">
                                     <h3>Cumplimiento de Objetivos</h3>
-                                    <p>La investigación validó la viabilidad de un sistema de gestión de mascotas operando sobre Raspberry Pi, integrando tecnologías RFID, QR y arquitectura web moderna. Se confirmó la interoperabilidad entre hardware de bajo costo y aplicaciones web, cumpliendo satisfactoriamente los objetivos propuestos para un prototipo académico funcional.</p>
+                                    <p>La investigación demostró la factibilidad técnica de implementar un sistema integral de gestión de mascotas sobre infraestructura de bajo costo, integrando tecnologías de identificación física y arquitectura web desacoplada. Los resultados evidencian una adecuada interoperabilidad entre los componentes del sistema, validando la propuesta y el cumplimiento de los objetivos definidos.</p>
                                 </div>
                             </div>
                             <!-- Specific Conclusions Section -->
@@ -6009,7 +6088,7 @@
                                             <i class="fas fa-server"></i>
                                         </div>
                                         <h4 class="card-title">Obj. 1: Viabilidad del Servidor</h4>
-                                        <p class="card-text">Se validó la capacidad técnica de Raspberry Pi 3 B+ como plataforma de servidor web para prototipo académico, logrando estabilidad del 100% en 100 requests de prueba. Sin embargo, se identificaron limitaciones de RAM (1GB) y procesamiento para cargas concurrentes. Para entornos productivos o comerciales se requeriría migrar a hardware industrial (servidores ARM de mayor especificación o arquitecturas x86).</p>
+                                        <p class="card-text">La Raspberry Pi 3 B+ demostró ser una alternativa funcional como servidor web, validando su capacidad para soportar el despliegue del sistema en entornos controlados. Durante las pruebas se evidenció estabilidad operativa; sin embargo, también se identificaron restricciones asociadas a sus recursos de hardware, especialmente en memoria y capacidad de procesamiento ante cargas concurrentes. Esto permitió concluir que, aunque es una solución viable para entornos de bajo requerimiento, una implementación a nivel comercial demandaría infraestructura de mayor robustez.</p>
                                     </div>
                                     <!-- Conc 2: Objetivo 2 - Integración Web -->
                                     <div class="obj-card">
@@ -6017,7 +6096,7 @@
                                             <i class="fas fa-code"></i>
                                         </div>
                                         <h4 class="card-title">Obj. 2: Plataforma Web Funcional</h4>
-                                        <p class="card-text">Se implementó exitosamente una arquitectura moderna (Angular 18, .NET 8 Core, PostgreSQL) con autenticación JWT y comunicación segura. El desarrollo presentó desafíos en la optimización de recursos del servidor y la sincronización frontend-backend, logrando finalmente tiempos de respuesta promedio de 1.87s y throughput de 4.26 req/s.</p>
+                                        <p class="card-text">Se consolidó una plataforma web funcional bajo una arquitectura moderna y desacoplada, garantizando autenticación segura y correcta comunicación entre capas. El proceso permitió identificar y resolver desafíos asociados a la sincronización entre servicios y al uso eficiente de recursos en el servidor. Como resultado, el sistema alcanzó tiempos de respuesta adecuados para entornos de baja y media demanda, validando la coherencia técnica de la solución propuesta.</p>
                                     </div>
                                     <!-- Conc 3: Objetivo 3 - Hardware RFID/QR -->
                                     <div class="obj-card">
@@ -6025,7 +6104,7 @@
                                             <i class="fas fa-microchip"></i>
                                         </div>
                                         <h4 class="card-title">Obj. 3: Integración RFID y QR</h4>
-                                        <p class="card-text">La integración de hardware RFID (RC522 + STM32) mediante emulación HID y generación dinámica de códigos QR resultó efectiva, alcanzando 100% de lecturas exitosas en pruebas. Se superaron desafíos de comunicación SPI y sincronización de datos, validando la interoperabilidad hardware-software en entornos de bajo costo.</p>
+                                        <p class="card-text">Se implementó exitosamente la integración entre el sistema RFID y la plataforma web, garantizando la captura y transmisión confiable de datos a través de emulación HID y generación de códigos QR. El desarrollo permitió superar dificultades técnicas relacionadas con comunicación y sincronización, validando la viabilidad de soluciones hardware-software accesibles y escalables.</p>
                                     </div>
                                 </div>
                             </div>
