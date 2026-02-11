@@ -3048,7 +3048,7 @@
 
             /* Left Column: Feature Comparison Table */
             .features-column {
-                flex: 3;
+                flex: 2.5;
                 display: flex;
                 flex-direction: column;
             }
@@ -3079,12 +3079,13 @@
 
             .comp-table th {
                 background-color: #f8fafc;
-                padding: 15px 20px;
+                padding: 10px 12px;
                 text-align: left;
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 700;
                 color: #003B70;
                 border-bottom: 2px solid #e5e7eb;
+                font-size: 11px;
             }
 
             .comp-table th.center-align {
@@ -3092,10 +3093,10 @@
             }
 
             .comp-table td {
-                padding: 12px 20px;
+                padding: 8px 12px;
                 border-bottom: 1px solid #f0f0f0;
                 color: #4b5563;
-                font-size: 15px;
+                font-size: 11px;
             }
 
             .comp-table tr:last-child td {
@@ -3109,12 +3110,12 @@
             /* Status Pills */
             .pill {
                 display: inline-block;
-                padding: 4px 12px;
+                padding: 3px 10px;
                 border-radius: 20px;
-                font-size: 13px;
+                font-size: 11px;
                 font-weight: 600;
                 text-align: center;
-                min-width: 80px;
+                min-width: 65px;
             }
 
             .pill-success {
@@ -3149,7 +3150,7 @@
 
             /* Right Column: Cost Analysis */
             .cost-column {
-                flex: 2;
+                flex: 2.5;
                 display: flex;
                 flex-direction: column;
             }
@@ -3166,9 +3167,9 @@
             }
 
             .chart-container {
-                flex: 1;
+                width: 100%;
+                height: 400px;
                 position: relative;
-                min-height: 250px;
             }
 
             .cost-summary {
@@ -3191,6 +3192,46 @@
                 font-size: 13px;
                 color: #555;
                 line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .cost-breakdown {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 12px;
+                font-size: 12px;
+                background-color: white;
+                border-radius: 6px;
+                overflow: hidden;
+            }
+
+            .cost-breakdown th {
+                background-color: #003B70;
+                color: white;
+                padding: 10px 8px;
+                text-align: left;
+                font-weight: 700;
+                font-size: 11px;
+            }
+
+            .cost-breakdown td {
+                padding: 10px 8px;
+                border-bottom: 1px solid #e5e7eb;
+                color: #374151;
+                font-size: 12px;
+            }
+
+            .cost-breakdown tr:last-child td {
+                border-bottom: none;
+            }
+
+            .cost-breakdown tr:hover {
+                background-color: #f9fafb;
+            }
+
+            .cost-breakdown small {
+                font-size: 10px;
+                color: #6b7280;
             }
 
             /* Footer */
@@ -4350,9 +4391,12 @@
                                     <div
                                         class="absolute inset-0 bg-brand-blue opacity-20 blur-2xl rounded-full transform scale-90 translate-y-4">
                                     </div>
+                                    <!-- <img alt="Raspberry Pi"
+                                        class="relative w-full h-auto object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-700"
+                                        style="max-width: 100%; height: auto;" src="files/RaspberryPi.png" /> -->
                                     <img alt="Raspberry Pi"
                                         class="relative w-full h-auto object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-700"
-                                        style="max-width: 100%; height: auto;" src="files/RaspberryPi.png" />
+                                        style="max-width: 100%; height: auto;" src="files/0101.png" />
                                 </div>
                             </div>
                             <!-- Tech Badges -->
@@ -4916,7 +4960,7 @@
                                     </div>
                                     <div class="bullet-text">
                                         <h3>Sistema Operativo</h3>
-                                        <p>Instalación de <strong>Ubuntu Server 24.04 LTS</strong> en Raspberry Pi 4,
+                                        <p>Instalación de <strong>Ubuntu Server 24.04 LTS</strong> en Raspberry Pi 3,
                                             optimizado para entornos de servidor headless de bajo consumo.</p>
                                     </div>
                                 </div>
@@ -5313,7 +5357,7 @@
                                     </div>
                                 </div>
                                 <!-- Point 3 -->
-                                <div class="bullet-point">
+                                <!-- <div class="bullet-point">
                                     <div class="bullet-icon">
                                         <i class="fas fa-print"></i>
                                     </div>
@@ -5323,7 +5367,7 @@
                                             para ser impreso en placas de identificación, collares o carteles de
                                             búsqueda.</p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- Right Column: Image -->
                             <div class="right-col">
@@ -5630,16 +5674,15 @@
                                     <p>Comparativa de Plataformas</p>
                                 </div>
                                 <div class="comparison-table-container">
-                                    <table class="comp-table" style="font-size: 12px;">
+                                    <table class="comp-table">
                                         <thead>
                                             <tr>
-                                                <th style="width: 18%;">Plataforma</th>
-                                                <th style="width: 14%; text-align: center;">RAM</th>
-                                                <th style="width: 18%; text-align: center;">CPU</th>
-                                                <th style="width: 14%; text-align: center;">Almacenamiento</th>
-                                                <th
-                                                    style="width: 18%; text-align: center; background-color: #e6f0fa; border-bottom: 3px solid #D66D00;">
-                                                    Costo Mensual</th>
+                                                <th style="width: 22%;">Plataforma</th>
+                                                <th style="width: 10%; text-align: center;">RAM</th>
+                                                <th style="width: 14%; text-align: center;">CPU</th>
+                                                <th style="width: 12%; text-align: center;">Almacen.</th>
+                                                <th style="width: 12%; text-align: center; background-color: #e6f0fa;">Costo/mes<br>(1er Año)</th>
+                                                <th style="width: 12%; text-align: center; background-color: #e6f0fa; border-bottom: 3px solid #D66D00;">Costo/mes<br>(2do+ Año)</th>
                                                 <th style="width: 18%; text-align: center;">Notas</th>
                                             </tr>
                                         </thead>
@@ -5651,10 +5694,11 @@
                                                 <td style="text-align: center;">1GB</td>
                                                 <td style="text-align: center;">4c ARM 1.4GHz</td>
                                                 <td style="text-align: center;">32GB MicroSD</td>
-                                                <td
-                                                    style="text-align: center; background-color: #e6f0fa; font-weight: bold; color: #28a745;">
+                                                <td style="text-align: center; background-color: #e6f0fa;">
+                                                    <span class="pill pill-warning">$5.90</span></td>
+                                                <td style="text-align: center; background-color: #e6f0fa; font-weight: bold;">
                                                     <span class="pill pill-success">$2.70</span></td>
-                                                <td style="text-align: center; font-size: 11px;">Inversión $60 + luz
+                                                <td style="text-align: center; font-size: 9px;">Energía, Internet y RPi ($60 1er año)
                                                 </td>
                                             </tr>
                                             <tr>
@@ -5664,9 +5708,9 @@
                                                 <td style="text-align: center;">2GB</td>
                                                 <td style="text-align: center;">2 vCPU Graviton2</td>
                                                 <td style="text-align: center;">20GB EBS SSD gp3</td>
-                                                <td style="text-align: center;"><span
-                                                        class="pill pill-danger">$8.80</span></td>
-                                                <td style="text-align: center; font-size: 11px;">Facturación/hora</td>
+                                                <td style="text-align: center;"><span class="pill pill-danger">$8.80</span></td>
+                                                <td style="text-align: center;"><span class="pill pill-danger">$8.80</span></td>
+                                                <td style="text-align: center; font-size: 9px;">Facturación/hora</td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -5675,9 +5719,9 @@
                                                 <td style="text-align: center;">1GB</td>
                                                 <td style="text-align: center;">1 vCPU Intel Xeon</td>
                                                 <td style="text-align: center;">32GB Premium SSD</td>
-                                                <td style="text-align: center;"><span
-                                                        class="pill pill-danger">$10.95</span></td>
-                                                <td style="text-align: center; font-size: 11px;">Pago mínimo mensual
+                                                <td style="text-align: center;"><span class="pill pill-danger">$10.95</span></td>
+                                                <td style="text-align: center;"><span class="pill pill-danger">$10.95</span></td>
+                                                <td style="text-align: center; font-size: 9px;">Pago mínimo mensual
                                                 </td>
                                             </tr>
                                             <tr>
@@ -5687,9 +5731,9 @@
                                                 <td style="text-align: center;">2GB</td>
                                                 <td style="text-align: center;">0.25 vCPU Intel/AMD</td>
                                                 <td style="text-align: center;">10GB Standard PD</td>
-                                                <td style="text-align: center;"><span
-                                                        class="pill pill-danger">$6.11</span></td>
-                                                <td style="text-align: center; font-size: 11px;">Capa gratuita</td>
+                                                <td style="text-align: center;"><span class="pill pill-danger">$6.11</span></td>
+                                                <td style="text-align: center;"><span class="pill pill-danger">$6.11</span></td>
+                                                <td style="text-align: center; font-size: 9px;">Capa gratuita</td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -5698,30 +5742,44 @@
                                                 <td style="text-align: center;">1GB</td>
                                                 <td style="text-align: center;">1 vCPU Intel</td>
                                                 <td style="text-align: center;">25GB SSD NVMe</td>
-                                                <td style="text-align: center;"><span
-                                                        class="pill pill-danger">$6.00</span></td>
-                                                <td style="text-align: center; font-size: 11px;">Precio fijo, 1TB
-                                                    incluido</td>
+                                                <td style="text-align: center;"><span class="pill pill-danger">$6.00</span></td>
+                                                <td style="text-align: center;"><span class="pill pill-danger">$6.00</span></td>
+                                                <td style="text-align: center; font-size: 9px;">Precio fijo, 1TB incl.</td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                                <!-- Savings Summary -->
+                                <div style="margin-top: 12px; padding: 12px; background-color: #f0f8ff; border-left: 4px solid #28a745; border-radius: 6px;">
+                                    <p style="margin: 0 0 8px 0; font-size: 13px; font-weight: bold; color: #003B70;">
+                                        <i class="fas fa-piggy-bank" style="margin-right: 6px;"></i>Ahorro Respecto a Plataformas Cloud
+                                    </p>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 11px;">
+                                        <div style="background: #fff; padding: 8px; border-radius: 6px; border: 1px solid #e0e0e0;">
+                                            <p style="margin: 0; color: #666; font-size: 10px;"><strong>Primer Año</strong></p>
+                                            <p style="margin: 4px 0 2px 0; color: #28a745; font-weight: bold; font-size: 18px;">26%</p>
+                                            <!-- <p style="margin: 0; color: #999; font-size: 9px;">vs promedio ($7.97/mes)</p> -->
+                                        </div>
+                                        <div style="background: #fff; padding: 8px; border-radius: 6px; border: 1px solid #e0e0e0;">
+                                            <p style="margin: 0; color: #666; font-size: 10px;"><strong>Segundo Año+</strong></p>
+                                            <p style="margin: 4px 0 2px 0; color: #28a745; font-weight: bold; font-size: 18px;">66%</p>
+                                            <!-- <p style="margin: 0; color: #999; font-size: 9px;">vs promedio ($7.97/mes)</p> -->
+                                        </div>
+                                    </div>
+                                    <p style="margin: 8px 0 0 0; font-size: 10px; color: #666; font-style: italic; line-height: 1.3; text-align: center;">
+                                        <!-- <strong>Ahorro total:</strong> $24.84 (1er año) • $63.24/año (2do+ año) -->
+                                    </p>
                                 </div>
                             </div>
                             <!-- Right: Cost Analysis -->
                             <div class="cost-column">
                                 <div class="section-title">
                                     <i class="fas fa-chart-pie text-blue-800"></i>
-                                    <p>Análisis de Costos (1 Año)</p>
+                                    <p>Análisis de Costos</p>
                                 </div>
                                 <div class="cost-card">
                                     <div class="chart-container">
                                         <canvas id="costChart"></canvas>
-                                    </div>
-                                    <div class="cost-summary">
-                                        <p class="cost-highlight">~77% Ahorro vs Cloud</p>
-                                        <p class="cost-desc">SIGECHIP: $32.40/año (solo electricidad). AWS equivalente:
-                                            $105.60/año. Azure: $131.40/año. Con inversión inicial de $60, la solución
-                                            Raspberry Pi se amortiza en menos de 2 meses vs Cloud.</p>
                                     </div>
                                 </div>
                             </div>
@@ -5735,10 +5793,10 @@
                         new Chart(ctx, {
                             type: 'bar',
                             data: {
-                                labels: ['SIGECHIP\n(RPi 3B+)', 'AWS EC2\nt4g.small', 'Azure\nVM B1s', 'Google Cloud\ne2-micro', 'DigitalOcean\nDroplet'],
+                                labels: ['RPi 3B+', 'AWS EC2', 'Azure', 'Google Cloud', 'DigitalOcean'],
                                 datasets: [{
                                     label: 'Costo Mensual (USD)',
-                                    data: [2.70, 8.80, 10.95, 6.11, 6.00],
+                                    data: [0.50, 8.80, 10.95, 6.11, 6.00],
                                     backgroundColor: [
                                         '#28a745', // Verde - SIGECHIP (más económico)
                                         '#dc3545', // Rojo - AWS
@@ -5882,57 +5940,47 @@
                                 </div>
                                 <div class="general-content">
                                     <h3>Cumplimiento de Objetivos</h3>
-                                    <p>Se cumplieron satisfactoriamente todos los objetivos propuestos, entregando un
-                                        sistema integral, operando exitosamente sobre Raspberry Pi y validando la
-                                        integración de tecnologías web modernas con hardware RFID.</p>
+                                    <p>La investigación validó la viabilidad de un sistema de gestión de mascotas operando sobre Raspberry Pi, integrando tecnologías RFID, QR y arquitectura web moderna. Se confirmó la interoperabilidad entre hardware de bajo costo y aplicaciones web, cumpliendo satisfactoriamente los objetivos propuestos para un prototipo académico funcional.</p>
                                 </div>
                             </div>
                             <!-- Specific Conclusions Section -->
                             <div>
                                 <div class="specific-title">
                                     <i class="fas fa-check-double" style="color: #D66D00;"></i>
-                                    Resultados Clave
+                                    Conclusiones por Objetivo
                                 </div>
                                 <div class="objectives-grid">
-                                    <!-- Conc 1: Viabilidad RPi -->
+                                    <!-- Conc 1: Objetivo 1 - Servidor RPi -->
+                                    <div class="obj-card">
+                                        <div class="card-icon">
+                                            <i class="fas fa-server"></i>
+                                        </div>
+                                        <h4 class="card-title">Obj. 1: Viabilidad del Servidor</h4>
+                                        <p class="card-text">Se validó la capacidad técnica de Raspberry Pi 3 B+ como plataforma de servidor web, confirmando su aptitud para hospedar aplicaciones de gestión de datos con arquitectura RESTful. Para entornos industriales o comerciales sería necesario considerar hardware más robusto.</p>
+                                    </div>
+                                    <!-- Conc 2: Objetivo 2 - Integración Web -->
+                                    <div class="obj-card">
+                                        <div class="card-icon">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <h4 class="card-title">Obj. 2: Plataforma Web Funcional</h4>
+                                        <p class="card-text">Se implementó exitosamente una arquitectura moderna (Express.js, React, PostgreSQL) con autenticación JWT y comunicación segura. El sistema desarrollado cumple con los requisitos funcionales para un prototipo de investigación académica.</p>
+                                    </div>
+                                    <!-- Conc 3: Objetivo 3 - Hardware RFID/QR -->
                                     <div class="obj-card">
                                         <div class="card-icon">
                                             <i class="fas fa-microchip"></i>
                                         </div>
-                                        <h4 class="card-title">Viabilidad Técnica</h4>
-                                        <p class="card-text">Se comprobó que la Raspberry Pi posee la capacidad de
-                                            cómputo y estabilidad necesaria para operar como un servidor web completo en
-                                            producción para este tipo de aplicación.</p>
+                                        <h4 class="card-title">Obj. 3: Integración RFID y QR</h4>
+                                        <p class="card-text">La integración de hardware RFID (RC522 + STM32) y generación de códigos QR resultó efectiva, logrando identificación exitosa con tiempos de respuesta promedio de 1.87s. Se validó la interoperabilidad entre dispositivos físicos y aplicaciones web.</p>
                                     </div>
-                                    <!-- Conc 2: Calidad Sistema -->
+                                    <!-- Conc 4: Impacto y Proyección -->
                                     <div class="obj-card">
                                         <div class="card-icon">
-                                            <i class="fas fa-shield-halved"></i>
+                                            <i class="fas fa-lightbulb"></i>
                                         </div>
-                                        <h4 class="card-title">Sistema Robusto</h4>
-                                        <p class="card-text">La plataforma resultante es funcional, segura
-                                            (autenticación JWT, SSL) y altamente escalable, gracias a la implementación
-                                            de Clean Architecture en el backend.</p>
-                                    </div>
-                                    <!-- Conc 3: Costo -->
-                                    <div class="obj-card">
-                                        <div class="card-icon">
-                                            <i class="fas fa-coins"></i>
-                                        </div>
-                                        <h4 class="card-title">Eficiencia Económica</h4>
-                                        <p class="card-text">Se logró una solución de muy bajo costo de implementación
-                                            en comparación con servicios en la nube o equipos dedicados, manteniendo
-                                            características empresariales.</p>
-                                    </div>
-                                    <!-- Conc 4: Futuro -->
-                                    <div class="obj-card">
-                                        <div class="card-icon">
-                                            <i class="fas fa-rocket"></i>
-                                        </div>
-                                        <h4 class="card-title">Base Tecnológica</h4>
-                                        <p class="card-text">El sistema establece una base modular sólida que facilita
-                                            la futura integración de nuevas tecnologías como visión artificial o
-                                            desarrollo de apps móviles nativas.</p>
+                                        <h4 class="card-title">Impacto y Proyección</h4>
+                                        <p class="card-text">El proyecto establece una base experimental para futuras investigaciones en IoT aplicado a mascotas. Abre líneas de trabajo en visión artificial, apps móviles nativas y soluciones multi-hogar con mayor nivel de integración tecnológica.</p>
                                     </div>
                                 </div>
                             </div>
